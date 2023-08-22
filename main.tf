@@ -1,11 +1,13 @@
 provider "aws" {
-    region = "us-west-1"  
+    region = "ap-southeast-2"  
 }
 
-resource "aws_instance" "foo" {
-  ami           = "ami-0f8e81a3da6e2510a" # us-west-1
-  instance_type = "t2.micro"
+resource "aws_s3_bucket" "my_bucket" {
+  bucket = "vijaya_s3_bucket"
+  acl    = "private"
+
   tags = {
-      Name = "TF-Instance"
+    Name        = "vijaya_s3_bucket"
+    Environment = "Development"
   }
 }
