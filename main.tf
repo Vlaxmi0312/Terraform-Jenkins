@@ -1,11 +1,11 @@
 provider "aws" {
-    region = "us-east-2"  
+    region = "ap-southeast-2"  
 }
 
-resource "aws_instance" "foo" {
-  ami           = "ami-05fa00d4c63e32376" # us-west-2
-  instance_type = "t2.micro"
+resource "aws_s3_bucket" "b" {
+ bucket ="vijaylaxmi-terraform-bucket"
   tags = {
-      Name = "TF-Instance"
+      Name = "vijaylaxmi-terraform-bucket"
+      Environment = "Dev"
   }
 }
